@@ -3,11 +3,13 @@ export default defineNuxtConfig({
     head: {
       title: 'Connor Ladly-Fredeen | Personal Website',
       meta: [
-        { name: 'description', content: 'Personal website of Connor Ladly-Fredeen: Engineer, runner, and ballet enthusiast.' },
+        {
+          name: 'description',
+          content:
+            'Personal website of Connor Ladly-Fredeen: Engineer, runner, and ballet enthusiast.',
+        },
       ],
-      link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      ],
+      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     },
   },
 
