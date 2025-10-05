@@ -48,7 +48,10 @@ export default defineNuxtConfig({
           content: 'https://connorladly.com/og-image.jpg',
         },
       ],
-      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+      link: [
+        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      ],
       script: [
         {
           src: `https://www.googletagmanager.com/gtm.js?id=GTM-NLRQ9QM`,
@@ -80,7 +83,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
     enabled: true,
     hostname: 'https://connorladly.com',
     // Allow custom routes to be added via additionalPaths
-    urls: [],
+    urls: ['/lane-duck'],
     // You can add custom routes by modifying this array:
     // urls: [
     //   '/custom-route-1',
