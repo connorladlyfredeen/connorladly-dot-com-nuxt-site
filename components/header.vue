@@ -10,8 +10,8 @@
 
 <script>
 export default {
-  name: 'Header'
-}
+  name: 'SiteHeader',
+};
 </script>
 
 <style scoped>

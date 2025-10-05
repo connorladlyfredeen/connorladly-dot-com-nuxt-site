@@ -19,7 +19,9 @@
         >Contact</NuxtLink
       >
       <span class="mx-2">|</span>
-      <NuxtLink to="/lane-duck" class="text-blue-500 hover:underline"
+      <NuxtLink
+        to="https://www.connorladly.com/lane-duck"
+        class="text-blue-500 hover:underline"
         >Lane Duck 🦆</NuxtLink
       >
     </nav>

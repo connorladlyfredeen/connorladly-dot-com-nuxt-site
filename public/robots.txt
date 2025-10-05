@@ -3,5 +3,6 @@
 User-agent: *
 Allow: /
 
-# Sitemap
+# Sitemaps
 Sitemap: https://connorladly.com/sitemap.xml
+Sitemap: https://connorladly.com/lane-duck/sitemap.xml

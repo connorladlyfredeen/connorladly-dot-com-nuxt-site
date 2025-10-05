@@ -36,11 +36,13 @@ yarn format:check  # Check formatting without making changes
 ## Architecture
 
 ### Framework
+
 - **Nuxt 3** with Vue 3 Composition API
 - **Tailwind CSS** for styling with Typography plugin
 - Static site generation (SSG) for deployment
 
 ### Project Structure
+
 - `pages/` - File-based routing (index.vue, about.vue, contact.vue, projects.vue)
 - `components/` - Reusable Vue components (Header.vue, Footer.vue)
 - `default.vue` - Root layout (note: should be in layouts/ directory for Nuxt 3 conventions)
@@ -48,6 +50,7 @@ yarn format:check  # Check formatting without making changes
 - `nuxt.config.ts` - Nuxt configuration with app metadata and module setup
 
 ### Configuration Files
+
 - `.eslintrc.js` - ESLint config with Vue 3 and Nuxt recommended rules
 - `.prettierrc` - Prettier formatting rules (semi, singleQuote, etc.)
 - `tailwind.config.ts` - Tailwind with Typography plugin enabled

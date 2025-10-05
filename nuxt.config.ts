@@ -83,7 +83,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
     enabled: true,
     hostname: 'https://connorladly.com',
     // Allow custom routes to be added via additionalPaths
-    urls: ['/lane-duck'],
+    urls: [],
     // You can add custom routes by modifying this array:
     // urls: [
     //   '/custom-route-1',

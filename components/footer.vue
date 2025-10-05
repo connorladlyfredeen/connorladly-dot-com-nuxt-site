@@ -7,8 +7,8 @@
 
 <script>
 export default {
-  name: 'Footer'
-}
+  name: 'SiteFooter',
+};
 </script>
 
 <style scoped>

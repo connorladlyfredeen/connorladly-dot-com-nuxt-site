@@ -1,22 +1,22 @@
 <!-- layouts/default.vue -->
 <template>
   <div>
-    <Header />
+    <SiteHeader />
     <nuxt />
-    <Footer />
+    <SiteFooter />
   </div>
 </template>
 
 <script>
-import Header from '~/components/Header.vue'
-import Footer from '~/components/Footer.vue'
+import SiteHeader from '~/components/Header.vue';
+import SiteFooter from '~/components/Footer.vue';
 
 export default {
   components: {
-    Header,
-    Footer
-  }
-}
+    SiteHeader,
+    SiteFooter,
+  },
+};
 </script>
 
 <style>
