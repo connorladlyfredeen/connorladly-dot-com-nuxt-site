@@ -18,6 +18,10 @@
       <NuxtLink to="/contact" class="text-blue-500 hover:underline"
         >Contact</NuxtLink
       >
+      <span class="mx-2">|</span>
+      <NuxtLink to="/lane-duck" class="text-blue-500 hover:underline"
+        >Lane Duck 🦆</NuxtLink
+      >
     </nav>
   </div>
 </template>

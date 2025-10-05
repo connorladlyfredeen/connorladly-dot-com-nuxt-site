@@ -1,0 +1,7 @@
+# robots.txt for connorladly.com
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://connorladly.com/sitemap.xml
