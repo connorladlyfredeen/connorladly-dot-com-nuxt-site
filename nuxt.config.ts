@@ -78,10 +78,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
   css: ['~/assets/styles/main.css'],
   modules: ['@nuxtjs/tailwindcss', '@nuxtjs/sitemap'],
 
+  site: {
+    url: 'https://www.connorladly.com',
+  },
+
   sitemap: {
     // Automatically include all pages
     enabled: true,
-    hostname: 'https://connorladly.com',
     // Allow custom routes to be added via additionalPaths
     urls: [],
     // You can add custom routes by modifying this array:
