@@ -19,6 +19,7 @@
     "nuxt": "^3.7.0"
   },
   "devDependencies": {
+    "@nuxtjs/sitemap": "^7.4.7",
     "@tailwindcss/typography": "^0.5.9",
     "eslint": "^8.57.1",
     "eslint-config-prettier": "^9.1.0",

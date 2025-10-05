@@ -1,0 +1,8 @@
+# robots.txt for connorladly.com
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://connorladly.com/sitemap.xml
+Sitemap: https://connorladly.com/lane-duck/sitemap.xml
