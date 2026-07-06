@@ -76,7 +76,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
   },
 
   css: ['~/assets/styles/main.css'],
-  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/sitemap'],
+  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/sitemap', '@sentry/nuxt/module'],
+
+  runtimeConfig: {
+    public: {
+      sentry: {
+        // Client-side DSN is public by design (it ships in the browser bundle),
+        // so it is safe to commit. Override per-environment with the
+        // NUXT_PUBLIC_SENTRY_DSN env var (e.g. in Netlify) if desired.
+        dsn: 'https://4e990cfa79c929d94072a634430da947@o4511684421681152.ingest.us.sentry.io/4511686052020224',
+      },
+    },
+  },
+
+  // Disable build-time source map upload; we're not wiring a Sentry auth token
+  // into CI for this static site. Errors are still captured at runtime.
+  sentry: {
+    sourceMapsUploadOptions: {
+      enabled: false,
+    },
+  },
 
   sitemap: {
     // Automatically include all pages
