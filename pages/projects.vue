@@ -1,3 +1,13 @@
+<script setup>
+import { usePageSeo } from '~/composables/usePageSeo';
+
+usePageSeo({
+  title: 'Projects | Connor Ladly-Fredeen',
+  description:
+    'Projects Connor Ladly-Fredeen is working on — high-throughput data systems, engineering team building, and endurance running goals.',
+});
+</script>
+
 <template>
   <div class="prose mx-auto py-20">
     <h1>Projects</h1>

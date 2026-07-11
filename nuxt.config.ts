@@ -97,17 +97,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
     },
   },
 
+  // Canonical site URL. Consumed by @nuxtjs/sitemap (so sitemap URLs use the
+  // real domain instead of the Netlify deploy URL) and by the per-page
+  // canonical tags. Override per-deploy with NUXT_PUBLIC_SITE_URL if needed.
+  site: {
+    url: 'https://www.connorladly.com',
+    name: 'Connor Ladly-Fredeen',
+  },
+
   sitemap: {
     // Automatically include all pages
     enabled: true,
-    hostname: 'https://connorladly.com',
     // Allow custom routes to be added via additionalPaths
     urls: [],
-    // You can add custom routes by modifying this array:
-    // urls: [
-    //   '/custom-route-1',
-    //   '/custom-route-2',
-    // ]
   },
 
   compatibilityDate: '2025-01-16',

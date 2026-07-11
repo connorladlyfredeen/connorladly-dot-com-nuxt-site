@@ -1,3 +1,14 @@
+<script setup>
+import { usePageSeo } from '~/composables/usePageSeo';
+
+usePageSeo({
+  title:
+    'Connor Ladly-Fredeen | Startup Leader, Triathlete & Retired Ballet Dancer',
+  description:
+    'Personal website of Connor Ladly-Fredeen — director of engineering, triathlete, and retired ballet dancer. Background, projects, and how to get in touch.',
+});
+</script>
+
 <template>
   <div class="text-center py-20">
     <h1 class="text-4xl font-bold">
