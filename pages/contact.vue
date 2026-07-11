@@ -1,3 +1,13 @@
+<script setup>
+import { usePageSeo } from '~/composables/usePageSeo';
+
+usePageSeo({
+  title: 'Contact | Connor Ladly-Fredeen',
+  description:
+    'Get in touch with Connor Ladly-Fredeen — email, LinkedIn, Instagram, Bluesky, and Strava.',
+});
+</script>
+
 <template>
   <div class="prose mx-auto py-20">
     <h1>Contact</h1>
