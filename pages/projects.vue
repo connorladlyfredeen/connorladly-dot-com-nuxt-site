@@ -24,6 +24,14 @@ usePageSeo({
         <strong>Running Goals:</strong> Boston Marathon 2025 DONE. Up next:
         Tremblant IronMan 70.3, More marathons? We'll see...
       </li>
+      <li>
+        <strong>LaneDuck 🦆:</strong> A
+        <a href="https://www.connorladly.com/lane-duck"
+          >Toronto pool lane-swim schedule finder</a
+        >
+        that aggregates lane swim times across 370+ City of Toronto public
+        pools. Built with Python and FastAPI.
+      </li>
     </ul>
   </div>
 </template>
