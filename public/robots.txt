@@ -4,5 +4,5 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://connorladly.com/sitemap.xml
-Sitemap: https://connorladly.com/lane-duck/sitemap.xml
+Sitemap: https://www.connorladly.com/sitemap.xml
+Sitemap: https://www.connorladly.com/lane-duck/sitemap.xml
