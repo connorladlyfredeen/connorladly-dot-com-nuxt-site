@@ -1,0 +1,5 @@
+# Old pages folded into the single-page homepage. Redirect so indexed links
+# don't 404. Revisit if these sections are rebuilt as standalone pages.
+/about      /  301
+/projects   /  301
+/contact    /  301
