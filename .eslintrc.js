@@ -4,6 +4,10 @@ module.exports = {
     browser: true,
     node: true,
   },
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+  },
   extends: [
     'eslint:recommended',
     'plugin:vue/vue3-recommended', // Recommended linting rules for Vue 3
