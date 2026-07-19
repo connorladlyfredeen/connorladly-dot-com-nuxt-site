@@ -1,3 +1,21 @@
 [build]
   publish = "dist"
   command = "yarn generate"
+
+# The About/Projects/Contact pages were folded into the single-page homepage.
+# Redirect the old paths to / so existing/indexed links don't 404. Revisit if
+# these sections are rebuilt as standalone pages later.
+[[redirects]]
+  from = "/about"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/projects"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/contact"
+  to = "/"
+  status = 301
