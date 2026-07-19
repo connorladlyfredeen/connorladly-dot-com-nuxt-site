@@ -76,7 +76,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
   },
 
   css: ['~/assets/styles/main.css'],
-  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/sitemap', '@sentry/nuxt/module'],
+  modules: [
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/sitemap',
+    '@sentry/nuxt/module',
+    '@nuxt/content',
+  ],
 
   runtimeConfig: {
     public: {

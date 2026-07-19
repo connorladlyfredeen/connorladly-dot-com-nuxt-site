@@ -100,7 +100,11 @@ useHead({
       </section>
 
       <footer class="foot">
-        <a href="https://www.connorladly.com/lane-duck" class="duck"
+        <NuxtLink to="/writing" class="flink">Writing</NuxtLink>
+        <span class="sep" aria-hidden="true">·</span>
+        <NuxtLink to="/reading" class="flink">Reading</NuxtLink>
+        <span class="sep" aria-hidden="true">·</span>
+        <a href="https://www.connorladly.com/lane-duck" class="flink"
           >LaneDuck&nbsp;🦆</a
         >
       </footer>
@@ -224,21 +228,28 @@ useHead({
 }
 .foot {
   margin-top: 8px;
-}
-.duck {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 10px;
   font-size: 0.85rem;
+}
+.flink {
   color: var(--muted);
   text-decoration: none;
   transition: color 0.15s ease;
 }
-.duck:hover,
-.duck:focus-visible {
+.flink:hover,
+.flink:focus-visible {
   color: var(--accent-strong);
 }
-.duck:focus-visible {
+.flink:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
   border-radius: 1px;
+}
+.sep {
+  color: var(--rule);
 }
 @media (max-width: 560px) {
   .list li {
