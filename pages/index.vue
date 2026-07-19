@@ -61,14 +61,14 @@ useHead({
         <p class="label">Working on</p>
         <ul class="list">
           <li>
+            <span class="k">Castor</span>
+            <span class="v">Building the delivery engineering org.</span>
+          </li>
+          <li>
             <span class="k">Adeptmind</span>
             <span class="v"
               >High-throughput data systems; 10x-ed the engineering team.</span
             >
-          </li>
-          <li>
-            <span class="k">Castor</span>
-            <span class="v">Building the delivery engineering org.</span>
           </li>
           <li>
             <span class="k">Running</span>
