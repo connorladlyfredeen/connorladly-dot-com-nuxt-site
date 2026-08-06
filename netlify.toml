@@ -1,6 +1,0 @@
-[build]
-  publish = "dist"
-  command = "yarn generate"
-
-# Redirects live in public/_redirects (ships inside the publish dir, which is
-# more reliable than netlify.toml for this static Nuxt setup).
