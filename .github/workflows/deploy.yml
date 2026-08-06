@@ -1,0 +1,71 @@
+name: Deploy
+
+# Push-to-deploy: build the static site and ship it to the connorladly-1 VM,
+# which serves it directly via nginx (see deploy.sh / deploy/nginx-default.conf).
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+# Never run two deploys at once; cancel an in-flight one if a newer push lands.
+concurrency:
+  group: deploy-production
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    name: Build and deploy to VM
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: yarn
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Generate static site
+        run: yarn generate
+
+      - name: Package build
+        run: tar czf site.tar.gz -C .output/public .
+
+      - name: Add SSH key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.VM_SSH_PRIVATE_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -H "${{ vars.VM_HOST }}" >> ~/.ssh/known_hosts 2>/dev/null
+
+      - name: Upload build to VM
+        run: |
+          scp -i ~/.ssh/deploy_key site.tar.gz \
+            "${{ vars.VM_USER }}@${{ vars.VM_HOST }}:~/site.tar.gz"
+
+      - name: Swap into web root
+        run: |
+          ssh -i ~/.ssh/deploy_key "${{ vars.VM_USER }}@${{ vars.VM_HOST }}" '
+            set -e
+            WEBROOT=/var/www/connorladly
+            sudo rm -rf ${WEBROOT}.new
+            sudo mkdir -p ${WEBROOT}.new
+            sudo tar xzf ~/site.tar.gz -C ${WEBROOT}.new
+            sudo chown -R root:root ${WEBROOT}.new
+            sudo rm -rf ${WEBROOT}.old
+            [ -d ${WEBROOT} ] && sudo mv ${WEBROOT} ${WEBROOT}.old || true
+            sudo mv ${WEBROOT}.new ${WEBROOT}
+            sudo rm -rf ${WEBROOT}.old ~/site.tar.gz
+            echo deployed
+          '
+
+      - name: Verify site responds
+        run: |
+          code=$(curl -s -o /dev/null -w "%{http_code}" https://www.connorladly.com/)
+          echo "Homepage returned $code"
+          test "$code" = "200"

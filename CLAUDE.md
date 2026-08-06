@@ -59,7 +59,20 @@ yarn format:check  # Check formatting without making changes
 
 - **GitHub Actions** runs on PRs to master branch (.github/workflows/ci.yml)
 - CI checks: linting and formatting
-- **Deployment**: Netlify (automatic on push)
+- **Deployment**: served directly by nginx on the `connorladly-1` GCP VM (no
+  Netlify).
+  - **Push-to-deploy**: pushing to `master` triggers `.github/workflows/deploy.yml`,
+    which builds and ships the static output to the VM over SSH. Auth uses the
+    `VM_SSH_PRIVATE_KEY` repo secret with `VM_HOST` / `VM_USER` repo variables.
+  - **Manual**: `./deploy.sh` builds locally and ships the same way (useful for
+    out-of-band deploys). The build runs locally/in CI because the f1-micro VM
+    lacks the RAM to build Nuxt itself; the VM only serves static files.
+  - Web root on the VM: `/var/www/connorladly`.
+- The VM's nginx also serves the lane-duck app and `/api`. A reference copy of
+  the server config lives in `deploy/nginx-default.conf`; the live file is
+  `/etc/nginx/sites-available/default` on the VM.
+- Requires gcloud CLI on the `default` config (project `connorladlydotcom`) with
+  SSH access to the VM.
 
 ## Node Version
 
