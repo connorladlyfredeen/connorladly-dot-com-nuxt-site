@@ -10,13 +10,21 @@ usePageSeo({
 // optional.
 const nowReading = [
   {
-    title: 'A Player of Games',
+    title: 'The Player of Games',
     author: 'Iain M. Banks',
+    year: '1988',
     note: 'The Culture series',
   },
 ];
 
-const read = [{ title: 'A Giant Leap', note: 'AI in healthcare' }];
+const read = [
+  {
+    title: 'A Giant Leap',
+    author: 'Robert Wachter',
+    year: '2026',
+    note: 'AI in healthcare',
+  },
+];
 </script>
 
 <template>
